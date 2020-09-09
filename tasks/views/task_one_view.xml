@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_t1_tree" model="ir.ui.view">
+            <field name="name">task.one.tree</field>
+            <field name="model">task.one</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Task one">
+                    <field name="field1" />
+                    <field name="field2" />
+                    <field name="field3" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_t1_form" model="ir.ui.view">
+            <field name="name">task.one.form</field>
+            <field name="model">task.one</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Task one form">
+                    <sheet>
+						<group>
+                            <group name="task_one">
+                                <field name="field1" />
+                                <field name="field2" />
+                                <field name="field3" />
+                            </group>
+						</group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_view_t1">
+            <field name="name">Task one</field>
+            <field name="res_model">task.one</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_no_content_create">This is Task one</p>
+            </field>
+        </record>
+        <menuitem id="menu_task_one" name="Tasks" />
+        <menuitem id="menu_t1" name="Task one" parent="menu_task_one" action="action_view_t1"/>
+    </data>
+</odoo>
