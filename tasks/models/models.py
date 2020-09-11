@@ -8,7 +8,6 @@ class task_one(models.Model):
     field2 = fields.Char(string='Field2', compute= 'update_field2', readonly=True)
     field3 = fields.Char(string='Field3', compute= 'update_field3', readonly=True)
     
-    
     @api.multi
     def update_field2(self):
         for rec in self:
@@ -28,4 +27,10 @@ class task_one(models.Model):
             li = []
             for i in list:
                 li.append(int(i))
-            rec.field3 = li
+            res = [[li[i], li[i + 1]]
+                    for i in range(len(li) - 1)]
+            result = []
+            for i in res:
+                if sum(i) == 20:
+                    result.append(i)
+            rec.field3 = result

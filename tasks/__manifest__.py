@@ -3,7 +3,7 @@
     'summary': """This module will be a task one""",
     'version': '10.0.0.0.0',
     'description': """This module will be a task one""",
-    'author': 'Susila S',
+    'author': 'Susila',
     'category': 'Tools',
     'depends': [],
     'data': [
